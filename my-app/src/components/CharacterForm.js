@@ -3,12 +3,15 @@ import { connect } from "react-redux"
 
 import { getData } from "../actions"
 //import action
+let i = 1;
 
 const CharacterForm = props => {
 
   const handleGetData = e => {
+    i += 1;
+
     e.preventDefault();
-    props.getData()
+    props.getData(i)
   }
   return (
     <>
@@ -16,7 +19,7 @@ const CharacterForm = props => {
         <div> Loading character </div>
       ) : (
           //searchform
-          <button onClick={handleGetData}> Find Character</button>
+          <button onClick={handleGetData}> Next Character</button>
         )}
     </>
   )
